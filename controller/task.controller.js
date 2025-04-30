@@ -5,7 +5,7 @@ export const getAllTasks=async(req,res,next)=>{
         const { priority, status, dueDateFrom, dueDateTo, sortBy, page, limit } =
       req.query;
 
-      console.log(req.query);
+    //   console.log(req.query);
 
       const userId =req.user.id;
 
@@ -49,6 +49,7 @@ export const getTaskById = async (req, res, next) => {
 
   export const createTask = async (req, res, next) => {
     try {
+        // console.log(req.body.id);
       const userId = req.user.id;
       const taskData = req.body;
       const task = await createTaskForUser(userId, taskData);
