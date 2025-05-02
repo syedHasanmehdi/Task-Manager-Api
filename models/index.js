@@ -3,6 +3,7 @@ import {config} from '../config/config.js';
 import UserModel from './user.js';
 import TaskModel from './task.js';
 import dotenv from 'dotenv';
+import logger from '../config/logger.js';
 
 dotenv.config();
 
@@ -33,12 +34,12 @@ const db = {
 (async () => {
   try {
     await sequelize.authenticate();
-    console.log('Connected to the database.');
+    logger.info('Connected to the database.');
 
     await sequelize.sync();
-    console.log('Database tables created or updated.');
+    logger.info('Database tables created or updated.');
   } catch (error) {
-    console.error('Failed to connect or sync with database:', error.message);
+    logger.error('Failed to connect or sync with database:', error.message);
   }
 })();
 
