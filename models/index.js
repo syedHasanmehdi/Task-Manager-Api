@@ -1,22 +1,11 @@
-import {Sequelize} from 'sequelize';
-import {config} from '../config/config.js';
+import {sequelize} from '../connection/sequelize.js';
 import UserModel from './user.js';
 import TaskModel from './task.js';
 import dotenv from 'dotenv';
 import logger from '../config/logger.js';
+import { Sequelize } from 'sequelize';
 
 dotenv.config();
-
-const sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    {
-      host: config.host,
-      dialect: config.dialect,
-      port: config.dbPort,
-    },
-);
 // eslint-disable-next-line new-cap
 const User = UserModel(sequelize, Sequelize.DataTypes);
 // eslint-disable-next-line new-cap
