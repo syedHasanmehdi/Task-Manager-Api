@@ -1,5 +1,5 @@
-import { Sequelize } from 'sequelize';
-import { config } from '../config/config.js';
+import {Sequelize} from 'sequelize';
+import {config} from '../config/config.js';
 import UserModel from './user.js';
 import TaskModel from './task.js';
 import dotenv from 'dotenv';
@@ -7,26 +7,27 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  {
-    host: config.host,
-    dialect: config.dialect,
-    port: config.dbPort,
-  }
+    config.database,
+    config.username,
+    config.password,
+    {
+      host: config.host,
+      dialect: config.dialect,
+      port: config.dbPort,
+    },
 );
-
+// eslint-disable-next-line new-cap
 const User = UserModel(sequelize, Sequelize.DataTypes);
- const Task = TaskModel(sequelize, Sequelize.DataTypes);
+// eslint-disable-next-line new-cap
+const Task = TaskModel(sequelize, Sequelize.DataTypes);
 
- User.hasMany(Task, { foreignKey: 'userId' });
- Task.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(Task, {foreignKey: 'userId'});
+Task.belongsTo(User, {foreignKey: 'userId'});
 
 const db = {
   sequelize,
   User,
-   Task,
+  Task,
 };
 
 (async () => {

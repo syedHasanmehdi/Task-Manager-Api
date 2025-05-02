@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-    const Task = sequelize.define(
+  const Task = sequelize.define(
       'Task',
       {
         title: {
@@ -8,6 +8,7 @@ export default (sequelize, DataTypes) => {
         },
         description: DataTypes.TEXT,
         priority: {
+          // eslint-disable-next-line new-cap
           type: DataTypes.ENUM('low', 'medium', 'high'),
           allowNull: false,
         },
@@ -16,6 +17,7 @@ export default (sequelize, DataTypes) => {
           allowNull: false,
         },
         status: {
+          // eslint-disable-next-line new-cap
           type: DataTypes.ENUM('pending', 'completed'),
           allowNull: false,
         },
@@ -34,9 +36,8 @@ export default (sequelize, DataTypes) => {
         tableName: 'Tasks',
         timestamps: true,
         paranoid: true,
-      }
-    );
-  
-    return Task;
-  };
-  
+      },
+  );
+
+  return Task;
+};

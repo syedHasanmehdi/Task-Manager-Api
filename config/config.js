@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import 'dotenv/config.js';
 
 export const config = {

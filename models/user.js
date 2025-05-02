@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-    const User = sequelize.define(
+  const User = sequelize.define(
       'User',
       {
         username: {
@@ -20,9 +20,8 @@ export default (sequelize, DataTypes) => {
       {
         tableName: 'Users',
         timestamps: true,
-      }
-    );
-  
-    return User;
-  };
-  
+      },
+  );
+
+  return User;
+};
