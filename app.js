@@ -7,6 +7,7 @@ const app=express();
 
 app.use(json());
 
+app.use(morgan('dev'));
 
 app.use('/api', routes); // All routes mounted under /api
 
