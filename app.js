@@ -8,7 +8,7 @@ const app=express();
 app.use(json());
 
 
-app.use('/api', routes); //All routes mounted under /api
+app.use('/api', routes); // All routes mounted under /api
 
 app.use(errorHandler);
 

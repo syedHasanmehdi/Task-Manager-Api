@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import jwt from 'jsonwebtoken';
 
 const authenticate = (req, res, next) => {
