@@ -5,7 +5,7 @@
 ## Features
 
    - User Authentication: Users can register and log in to the application.
-   - Task Management: Users can:
+   - Task Management: Users can 
        - Create, update, view, and delete tasks.
        - Filter tasks by priority, status, and due date.
        - Sort tasks by due date or priority.

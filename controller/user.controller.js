@@ -10,6 +10,7 @@ export const register = async (req, res, next) => {
   try {
     const userData = req.body;// ← fixed
     const newUser = await createUser(userData);
+    console.log(newUser);
 
     const token = jwt.sign(
         {id: newUser.id, username: newUser.username}, // ← use newUser

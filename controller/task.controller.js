@@ -38,6 +38,7 @@ export const getAllTasks=async (req, res, next)=>{
 // Get a single task by ID
 export const getTaskById = async (req, res, next) => {
   try {
+    console.log(req.user, '.....', req.user.id, '.....', req.params);
     const userId = req.user.id;
     const taskId = req.params.id;
     const task = await getTaskByIdForUser(taskId, userId);

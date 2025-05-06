@@ -3,7 +3,7 @@ import UserModel from './user.js';
 import TaskModel from './task.js';
 import dotenv from 'dotenv';
 import logger from '../config/logger.js';
-import { Sequelize } from 'sequelize';
+import {Sequelize} from 'sequelize';
 
 dotenv.config();
 // eslint-disable-next-line new-cap
